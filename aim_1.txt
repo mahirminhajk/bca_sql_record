@@ -29,7 +29,7 @@ d) ALTER TABLE customer DROP COLUMN age;
 
 e) ALTER TABLE customer ALTER COLUMN cust_name TYPE varchar(25);
 
-f) DELECT FROM customer;
+f) DELET FROM customer;
 
 g) ALTER TABLE customer RENAME TO cust;
 
