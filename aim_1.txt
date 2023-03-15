@@ -1,0 +1,37 @@
+LAB QUESTION DBMS:
+1. Create a table customer (cust_no varchar (5), cust_name varchar (15), age 
+number, phone varchar (10))
+ CREATE TABLE customer(cust_no varchar(5), cust_name varchar(15),age int,phone varchar(10)); 
+
+a) insert 5 records and display it
+ INSERT INTO customer VALUES('01', 'mahir', 20, '1234567890');
+ INSERT INTO customer VALUES('02', 'rabeeh', 19, '8086009468');
+ INSERT INTO customer VALUES('03', 'gokul', 19, '8562652468');
+ INSERT INTO customer VALUES('04', 'asir', 19, '8562652678');
+ INSERT INTO customer VALUES('05', 'raoof', 22, '8566842678');
+ 
+ SELECT * FROM customer 
+ 
+b) add new field d_birth with date datatype
+ ALTER TABLE customer ADD COLUMN d_birth DATE;
+ 
+ 
+c) create another table cust_phone with fields cust_name and phone from customer table
+CREATE TABLE cust_phone as (select cust_name, phone from customer);
+
+
+d) remove the field age
+ALTER TABLE customer DROP COLUMN age;
+
+e) change the size of the cust_name to 25
+ ALTER TABLE customer ALTER COLUMN cust_name TYPE varchar(25);
+
+f) delete all the records from the table
+TRUNCATE TABLE customer; 
+DELECT FROM customer;
+
+g) rename the table cutomer to cust
+ ALTER TABLE customer RENAME TO cust;
+
+h) drop the table
+ DROP TABLE cust;
