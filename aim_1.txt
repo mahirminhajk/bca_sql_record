@@ -14,7 +14,6 @@ h) drop the table
 queries:
 1. CREATE TABLE customer(cust_no varchar(5), cust_name varchar(15),age int,phone varchar(10)); 
 
-
 a)INSERT INTO customer VALUES('01', 'mahir', 20, '1234567890');
  INSERT INTO customer VALUES('02', 'rabeeh', 19, '8086009468');
  INSERT INTO customer VALUES('03', 'gokul', 19, '8562652468');
