@@ -19,7 +19,7 @@ a)INSERT INTO customer VALUES('01', 'mahir', 20, '1234567890');
  INSERT INTO customer VALUES('03', 'gokul', 19, '8562652468');
  INSERT INTO customer VALUES('04', 'asir', 19, '8562652678');
  INSERT INTO customer VALUES('05', 'raoof', 22, '8566842678');
- SELECT * FROM customer 
+ SELECT * FROM customer;
  
 b) ALTER TABLE customer ADD COLUMN d_birth DATE;
   
