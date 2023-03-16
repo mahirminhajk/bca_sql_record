@@ -1,0 +1,11 @@
+Create a table Hospital with the fields 
+(doctorid,doctorname,department,qualification,experience).
+Write the queries to perform the following.
+a) Insert 5 records
+b) Display the details of Doctors
+c) Display the details of doctors who have the qualification ‘MD’
+d) Display all doctors who have more than 5 years experience but do not 
+have the qualification ‘MD’ 
+e) Display the doctors in ‘Skin’ department
+f) update the experience of doctor with doctored=’D003’ to 5
+g) Delete the doctor with DoctorID=’D005’
