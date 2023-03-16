@@ -9,3 +9,26 @@ have the qualification ‘MD’
 e) Display the doctors in ‘Skin’ department
 f) update the experience of doctor with doctored=’D003’ to 5
 g) Delete the doctor with DoctorID=’D005’
+
+
+CREATE TABLE hospital(docid varchar(10), docname varchar(20),dept varchar(10),qualification varchar(15), experience int);
+
+a) INSERT INTO hospital VALUES('D001','David','Kids','MD',3);
+ INSERT INTO hospital VALUES('D002','John','Skin','MBBS',7);
+ INSERT INTO hospital VALUES('D003','Mahir','Dental','BDS',3);
+ INSERT INTO hospital VALUES('D004','Asir','Skin','MD',7);
+ INSERT INTO hospital VALUES('D005','Gokul','Kids','MD',4);
+ 
+ SELECT * FROM hospital;
+ 
+b)SELECT docname, dept from hospital;
+
+c)SELECT docname FROM hospital WHERE qualification = 'MD';
+
+d)SELECT docname FROM hospital WHERE qualification != 'MD' and experience > 5;
+
+e)SELECT docname FROM hospital WHERE dept = 'Skin';
+
+f)UPDATE hospital set experience = 5 where docid = 'D003';
+
+g)DELETE FROM hospital where docid='D005';
