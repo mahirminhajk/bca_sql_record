@@ -30,7 +30,7 @@ b)alter table sales_man drop constraint sales_man_pkey cascade;
 
 c)ALTER TABLE sales_order DROP constraint fk_salesman;
 ALTER TABLE sales_order DROP constraint check_order_status;
-ALTER TABLE sales_order_DROP constraint check_del_type;
+ALTER TABLE sales_order DROP constraint check_del_type;
 
 d)ALTER TABLE sales_man ADD constraint pk_salesman primary key(salesman_no);
 
