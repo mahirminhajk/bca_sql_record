@@ -1,0 +1,47 @@
+Create the following table:
+Bank_customer (accno primary key, cust_name, place)
+Deposit (accno foreign key, deposit_no, damount)
+Loan (accno foreign key loan_no, Lamount)
+Write the following queries
+a) Display the details of the customers
+b) Display the customers along with deposit amount who have only deposit 
+with the bank
+c) Display the customers along with loan amount who have only loan with the 
+bank
+d) Display the customers they have both loan and deposit with the bank
+e) Display the customer who have neither a loan nor a deposit with the bank
+
+querys
+
+create table bank_customer (accno varchar(6) primary key, cname varchar(20), place varchar(20));
+
+insert into bank_customer values('100301', 'John', 'kottakkal');
+insert into bank_customer values('100302', 'Mahir', 'malappuram');
+insert into bank_customer values('100303', 'Asir', 'kottakkal');
+insert into bank_customer values('100304', 'rahul', 'vengara');
+insert into bank_customer values('100305', 'gokul', 'kozhikkode');
+insert into bank_customer values('100306', 'raoof', 'kottakkal');
+select * from bank_cutomer;
+
+create table deposit(accno varchar(6), desposit_no varchar(6), d_amount int, foreign key(accno) references bank_customer(accno));
+
+insert into deposit values('100302', '100534', 25000);
+insert into deposit values('100304', '100678', 15000);
+insert into deposit values('100305', '101234', 10000);
+select * from deposit
+
+create table loan(accno varchar(6), loan_no varchar(3), l_amount int, foreign key(accno) references bank_customer(accno));
+
+insert into loan values('100303', '121', 14500);
+insert into loan values('100301', '122', 25000);
+insert into loan values('100302', '123', 5000);
+insert into loan values('100305', '124', 50000);
+select * from loan;
+
+
+a, select * from bank_customer;
+b, select cname, d_amount from bank_customer, deposit where bank_customer.accno = deposit.accno;
+c,select cname, l_amount from bank_customer, loan where bank_customer.accno = loan.accno;
+d, select cname from bank_customer, deposit, loan where bank_customer.accno=loan.accno and bank_customer.accno=deposit.accno;
+e,select * from bank_customer where accno not in (select accno from deposit union select accno from loan);
+
