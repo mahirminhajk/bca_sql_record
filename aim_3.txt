@@ -36,4 +36,4 @@ d)ALTER TABLE sales_man ADD constraint pk_salesman primary key(salesman_no);
 
 e)ALTER TABLE sales_order ADD constraint fk_salesman foreign key (salesman_no) references sales_man(salesman_no);
 ALTER TABLE sales_order ADD constraint check_del_type check (del_type IN('P', 'F'));
-ALTER TABLE sales order ADD constraint checck_order_status check (order_status IN('Inprocess', 'Fulfilled', 'Backorder', 'Cancelled'));
+ALTER TABLE sales order ADD constraint checck_order_status check (order_status IN('Inprocess', 'Fullfilled', 'Backorder', 'Cancelled'));
