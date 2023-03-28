@@ -1,0 +1,11 @@
+5. Create a table employee with fields (EmpID, EName, Salary, Department, and 
+Age). Insert some records. Write SQL queries using aggregate functions and 
+group by clause 
+A. Display the total number of employees.
+B. Display the name and age of the oldest employee of each department.
+C. Display the average age of employees of each department
+D. Display departments and the average salaries
+E. Display the lowest salary in employee table
+F. Display the number of employees working in purchase department
+G. Display the highest salary in sales department;
+H. Display the difference between highest and lowest salary
