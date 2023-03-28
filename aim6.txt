@@ -1,0 +1,12 @@
+6. Create a table product with the fields (Product_code primary key, 
+Product_Name, Category, Quantity, Price). 
+Insert some records Write the queries to perform the following.
+a. Display the records in the descending order of Product_Name
+b. Display Product_Code, Product_Name with price between 20 and 50
+c. Display the details of products which belongs to the categories of 
+‘bath soap’, ‘paste’, or ‘washing powder’
+d. Display the products whose Quantity less than 100 or greater than 500
+e. Display the products whose names starts with 's'
+f. Display the products which not belongs to the category 'paste'
+g. Display the products whose second letter is 'u' and belongs to the 
+Category 'washing powder'
