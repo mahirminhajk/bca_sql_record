@@ -3,10 +3,29 @@ Product_Name, Category, Quantity, Price).
 Insert some records Write the queries to perform the following.
 a. Display the records in the descending order of Product_Name
 b. Display Product_Code, Product_Name with price between 20 and 50
-c. Display the details of products which belongs to the categories of 
-‘bath soap’, ‘paste’, or ‘washing powder’
+c. Display the details of products which belongs to the categories of ‘bath soap’, ‘paste’, or ‘washing powder’
 d. Display the products whose Quantity less than 100 or greater than 500
 e. Display the products whose names starts with 's'
 f. Display the products which not belongs to the category 'paste'
-g. Display the products whose second letter is 'u' and belongs to the 
-Category 'washing powder'
+g. Display the products whose second letter is 'u' and belongs to the Category 'washing powder'
+
+
+queries
+
+create table products(pro_code varchar(3) primary key, pro_name varchar(15), category varchar(20), quantity int, price int);
+
+insert into products values('101', 'lexi', 'pen', 120, 6);
+insert into products values('102', 'lux', 'bath soap', 600, 10);
+insert into products values('103', 'pears', 'bath soap', 150, 25);
+insert into products values('104', 'sensodyne', 'paste', 550, 20);
+insert into products values('105', 'colgate', 'paste', 60, 10);
+insert into products values('106', 'sun', 'washing powder', 40, 120);
+insert into products values('107', 'tide', 'washing powder', 120, 65);
+
+A,select * from products order by pro_name desc;
+B,select pro_code, pro_name from products where price between 20 and 50;
+C,select pro_name, price from products where category in ('bath soap', 'paste', 'washing powder');
+D,select * from products where quantity<100 or quantity>500;
+E,select * from products where pro_name like 's%';
+F,select * from products where category not in ('paste');
+G,select pro_name from products where pro_name like '_u%' and category in ('washing powder');
