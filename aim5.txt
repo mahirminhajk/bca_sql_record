@@ -9,3 +9,25 @@ E. Display the lowest salary in employee table
 F. Display the number of employees working in purchase department
 G. Display the highest salary in sales department;
 H. Display the difference between highest and lowest salary
+
+
+queries
+
+create table employee (empid varchar(3) primary key, ename varchar(25), salary int, dept varchar(15), age int);
+
+insert into employee values('101','David',8000,'purchase',19);
+insert into employee values('102','John',8700,'sales',22);
+insert into employee values('103','Jose',14000,'stock',25);
+insert into employee values('104','Vijay',19500,'sales',28);
+insert into employee values('105','Rani',10000,'purchase',21);
+insert into employee values('106','Rahul',11000,'purchase',20);
+insert into employee values('107','gokul',15000,'sales',23);
+
+A. select from employee count(ename);
+B. select dept,max(age) as maximum_age from employee group by dept;
+C. select dept,avg(age) as average_age from employee group by dept;
+D. select dept,avg(salary) as average_salary from employee group by dept;
+E. select min(salary) as min_salary from employee;
+F. select count(ename) as number_of_employees from employee  where dept='purchase';
+G. select max(salary) as max_salary_sales from employee where dept='sales';
+H. select max(salary) - min(salary) as salary_deference from employee;
