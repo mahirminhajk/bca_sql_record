@@ -1,0 +1,30 @@
+Create table supplier(supcode,sname,city)
+Create table product (pcode,pname)
+Create table supl_product(supcode,pcode,qty)
+a) Get all pairs of supplier numbers such that the two suppliers are located in 
+the same city.
+b) Get supplier names for suppliers who supply product P2.
+c) Get product numbers supplied by more than one supplier.
+d) Get supplier numbers for suppliers who are located in the same city as 
+supplier S1.
+e) Get supplier names for suppliers who supply part P1.
+f) Get the number of Suppliers, who are supplying at least one product.
+g) For each product supplied, get the pcode. and the total quantity supplied for 
+that part
+
+queries:
+
+
+a)
+
+b) 
+
+c) 
+
+d) 
+
+e)
+
+f)
+
+g)
