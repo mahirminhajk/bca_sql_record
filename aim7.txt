@@ -1,0 +1,29 @@
+Consider the employee database given below. Give an expression in SQL for 
+each of the following queries:
+EMPLOYEE (Employee-Name, City)
+WORKS (Employee-Name, Company-Name, Salary)
+COMPANY (Company-Name, City)
+MANAGES (Employee-Name, Manager-Name)
+
+A) Find the names of all employees who work in Infosys
+B) Find the names and cities of residence of all employees who works in Wipro
+C) Find the names, and cities of all employees who work in Infosys and earn 
+more than Rs. 10,000.
+D) Find the employees who live in the same cities as the companies for which 
+they work.
+E) Find all employees who do not work in Wipro Corporation.
+F) Find the company that has the most employees
+
+queries:
+
+A)
+
+B)
+
+C)
+
+D)
+
+E)
+
+F) 
