@@ -15,15 +15,37 @@ E) Find all employees who do not work in Wipro Corporation.
 F) Find the company that has the most employees
 
 queries:
+create table employee(emp_name varchar(20),city varchar(20));
 
-A)
+insert into employee values('Sam','Cochin');
+insert into employee values('Rani','Pune');
+insert into employee values('Ram','Bengaluru');
 
-B)
+create table works(emp_name varchar(20), company_name varchar(30), salary int);
 
-C)
+insert into works values('Sam','Wipro',15000);
+insert into works values('Ram','Infosys',25000);
+insert into works values('Rani','Wipro',22000);
 
-D)
+create table company(company_name varchar(30), city varchar(20));
 
-E)
+insert into company values('Winpro','Bengaluru');
+insert into company values('Infosys','Bengaluru');
 
-F) 
+create table manages(emp_name varchar(20), managerd_name varchar(20));
+
+insert into manages values('Sam','Diya');
+insert into manages values('Ram','Arul');
+insert into manages values('Rani','Das');
+
+A) select emp_name from works where company_name ='Infosys';
+
+B)select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Wipro';
+
+C)select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Infosys' and salary>10000;
+
+D)select employee.emp_name from employee, works, company where company.company_name = works.company_name and works.emp_name = employee.emp_name and company.city = employee.city;
+
+E) select * from works where company_name not in ('Wipro');
+
+F) select company_name from works group by company_name having count(distinct emp_name) >= all (select count(distinct emp_name) from works group by company_name);
