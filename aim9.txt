@@ -1,0 +1,24 @@
+Prepare a salary report of the employees showing the details such as:
+ EmpNo, Name, Basic Pay, DA, Gross Salary, PF, Net Salary, Annual Salary and Tax
+ For this purpose, create a table named SALARIES having the following structure.
+
+| Field Name  |         Type  |      Width  |
+|  EmpNo      |   Character   |      10     |
+|   Name      |     Character |         20  |
+|  Basic      |   Numeric     |       6     |
+
+Enter the records of at least 10 employees. Use the following information for 
+calculating the details for the report:
+
+DA is fixed as the 40% of the basic pay.
+PF is fixed as 10% of the basic pay.
+Gross Salary is (Basic Pay + DA).
+Net Salary is (Gross Salary – PF)
+Annual Salary is (12 * Net Salary)
+
+Tax is calculated using the following rules:
+
+If annual salary is less than 100000, No Tax
+If annual salary is greater than 100000 but less than or equal to 150000, then the tax is 10% of the excess over 100000.
+If annual salary is greater than 150000 but less than or equal to 250000, then the tax is 20% of the excess over 150000.
+If annual salary is greater than 250000, then the tax is 30% of the excess over 250000
