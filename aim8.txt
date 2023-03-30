@@ -1,30 +1,49 @@
 Create table supplier(supcode,sname,city)
 Create table product (pcode,pname)
 Create table supl_product(supcode,pcode,qty)
-a) Get all pairs of supplier numbers such that the two suppliers are located in 
-the same city.
+a) Get all pairs of supplier numbers such that the two suppliers are located in the same city.
 b) Get supplier names for suppliers who supply product P2.
 c) Get product numbers supplied by more than one supplier.
 d) Get supplier numbers for suppliers who are located in the same city as 
 supplier S1.
 e) Get supplier names for suppliers who supply part P1.
 f) Get the number of Suppliers, who are supplying at least one product.
-g) For each product supplied, get the pcode. and the total quantity supplied for 
-that part
+g) For each product supplied, get the pcode. and the total quantity supplied for that part
 
 queries:
 
+create table supplier(supcode varchar(3) primary key, sname varchar(30), city varchar(30));
 
-a)
+insert into supplier values('S1','Raju','Palakkad');
+insert into supplier values('S3','Arjun','Malappuram');
+insert into supplier values('S2','Minhaj','Palakkad');
+insert into supplier values('S4','Thomas','Thrissur');
 
-b) 
+create table product (pcode varchar(3) primary key, pname varchar(30));
 
-c) 
+insert into product values('P1', 'Meswalk');
+insert into product values('P3', 'Meswalk');
+insert into product values('P2', 'Sensodine');
+insert into product values('P4', 'Colgate');
 
-d) 
+create table supl_product(supcode varchar(3), pcode varchar(30), qty int);
 
-e)
+insert into supl_product values('S1', 'P1', 50);
+insert into supl_product values('S2', 'P3', 25);
+insert into supl_product values('S3', 'P2', 25);
+insert into supl_product values('S5', 'P1', 50);
+insert into supl_product values('S4', 'P4', 30);
 
-f)
+a)select F.sname as Supplier1, S.sname as Supplier2 from supplier F, supplier S where F.city =S.city and F.supcode<>S.supcode;
 
-g)
+b)select sname from supplier, supl_product where supl_product.pcode='P2' and supl_product.supcode=supplier.supcode;
+
+c) select count(supl_product.pcode) from supl_product group by supl_product.pcode having count(supl_product.supcode)>1;
+
+d) select supcode from supplier where city = (select city from supplier where supcode ='S1');
+
+e)select supplier.sname from supplier, supl_product where supl_product.supcode=supplier.supcode and supl_product.pcode = 'P1';
+
+f)select supplier.supcode from supplier where supplier.supcode in (select distinct supcode from supl_product);
+
+g)select pcode, qty from supl_product;
