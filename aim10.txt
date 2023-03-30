@@ -1,0 +1,41 @@
+.Create table exam_result(rollno, avg_score, Grade) insert 10 records. Assign 
+null values to the field grade. Write Program block to update the grade field by 
+using the following condition.
+
+avg_score between 90 and 100 - A
+avg_score 75 -89 - B 
+avg_score 60- 74 - C
+avg_score 50 -59 - D
+avg_score below 50 - E
+
+queries:
+
+ create table exam_result(rollno int primary key,avg_score int not null, grade char);
+ 
+ insert into exam_result values (1, 85, NULL), (2, 72, NULL), (3, 94, NULL), (4, 60, NULL), (5, 45, NULL),
+ (6, 88, NULL), (7, 78, NULL), (8, 99, NULL), (9, 63, NULL), (10, 53, NULL);
+ 
+ select * from exam_result;
+ 
+ 
+DO $$
+DECLARE
+  rollno_var INT;
+  avg_score_var FLOAT;
+BEGIN
+  FOR rollno_var, avg_score_var IN SELECT rollno, avg_score FROM exam_result
+  LOOP
+    UPDATE exam_result
+    SET Grade = CASE
+      WHEN avg_score_var BETWEEN 90 AND 100 THEN 'A'
+      WHEN avg_score_var BETWEEN 75 AND 89 THEN 'B'
+      WHEN avg_score_var BETWEEN 60 AND 74 THEN 'C'
+      WHEN avg_score_var BETWEEN 50 AND 59 THEN 'D'
+      ELSE 'E'
+    END
+    WHERE exam_result.rollno = rollno_var;
+  END LOOP;
+END $$;
+
+
+select * from exam_result;
